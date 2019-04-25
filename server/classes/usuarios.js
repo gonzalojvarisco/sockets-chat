@@ -1,15 +1,12 @@
-
-
-
 class Usuarios {
 
-    constructor(){
+    constructor() {
         this.personas = [];
     }
 
-    agregarPersona(id, nombre){
+    agregarPersona(id, nombre, sala) {
 
-        let persona = { id, nombre };
+        let persona = { id, nombre, sala };
 
         this.personas.push(persona);
 
@@ -17,26 +14,26 @@ class Usuarios {
 
     }
 
-    getPersona(id){
+    getPersona(id) {
 
         let persona = this.personas.filter(pers => pers.id === id)[0]; //filter va a verificar en el arreglo si hay una persona con el mismo id. El [0] se coloca para que solo devuelva un elemento
-        
+
         return persona; //si no encuentra una persona va a devolver undefine o null
     }
 
-    getPersonas(){
+    getPersonas() {
         return this.personas;
     }
 
-    getPersonasPorSala(sala){
+    getPersonasPorSala(sala) {
         //....
     }
 
-    borrarPersona(id){
+    borrarPersona(id) {
 
-        let personaBorrada  = this.getPersona(id);
+        let personaBorrada = this.getPersona(id);
 
-        this.personas = this.personas.filter(pers =>{
+        this.personas = this.personas.filter(pers => {
             return pers.id != id;
         });
 
